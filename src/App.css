@@ -1,0 +1,11 @@
+img {
+  width: 200px;
+}
+
+.flex {
+  display: flex;
+}
+
+h1 {
+  text-align: center;
+}
