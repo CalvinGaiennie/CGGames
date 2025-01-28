@@ -1,0 +1,36 @@
+.flex {
+  display: flex;
+}
+
+.square {
+  width: 60px;
+  height: 60px;
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+  align-items: center;
+  /* border: 0.1px solid black; */
+}
+
+.dark {
+  background-color: rgb(250, 207, 154);
+}
+
+.light {
+  background-color: antiquewhite;
+}
+
+.selected {
+  background-color: rgb(196, 157, 108);
+}
+
+/* .squareDiv {
+  box-sizing: border-box;
+  display: flex;
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+} */

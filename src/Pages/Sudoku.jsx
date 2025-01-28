@@ -1,3 +1,4 @@
+import Board from "../Sudoku/Components/Board";
 import Header from "../components/Header";
 import ReturnToHomeLink from "../components/ReturnToHomeLink";
 
@@ -7,7 +8,7 @@ function Sudoku() {
       {/* <AppNav></AppNav> */}
       <Header />
       <ReturnToHomeLink />
-      <p>Sudoku</p>
+      <Board />
     </div>
   );
 }

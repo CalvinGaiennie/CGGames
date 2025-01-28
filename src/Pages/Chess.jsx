@@ -1,3 +1,4 @@
+import ChessBoard from "../Chess/Components/ChessBoard.jsx";
 import Header from "../components/Header";
 import ReturnToHomeLink from "../components/ReturnToHomeLink";
 
@@ -6,7 +7,7 @@ function Chess() {
     <div>
       <Header />
       <ReturnToHomeLink />
-      chess
+      <ChessBoard />
     </div>
   );
 }
