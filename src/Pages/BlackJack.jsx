@@ -266,6 +266,18 @@ function reducer(state, action) {
   }
 }
 
+function checkForAce(cards) {
+  const ace = cards.indexOf(11);
+  if (ace !== -1) {
+    changeAceToOne(cards);
+  }
+}
+
+function changeAceToOne(cards) {
+  const ace = cards.indexOf(11);
+  cards[ace] = 1;
+}
+
 function BlackJack() {
   const [
     { dealerCards, playerCards, gameStatus, dealerTurn, dealerDealt, strategy },
@@ -277,18 +289,28 @@ function BlackJack() {
     const playerHandStatus = checkHand(playerCards);
     const dealerHandStatus = checkHand(dealerCards);
 
+    // check for ace and call changeAceTo One if true
+    // for the next two if statements.
     if (playerHandStatus > 21) {
-      dispatch({
-        type: "declareGame",
-        payload: `Player Busts. Dealer Hand: ${dealerHandStatus}. Player Hand: ${playerHandStatus}`,
-      });
+      if (checkForAce(playerCards)) {
+        return;
+      } else {
+        dispatch({
+          type: "declareGame",
+          payload: `Player Busts. Dealer Hand: ${dealerHandStatus}. Player Hand: ${playerHandStatus}`,
+        });
+      }
       return;
     }
     if (dealerHandStatus > 21) {
-      dispatch({
-        type: "declareGame",
-        payload: `Dealer Busts. Dealer Hand: ${dealerHandStatus}. Player Hand: ${playerHandStatus}`,
-      });
+      if (checkForAce(dealerCards)) {
+        return;
+      } else {
+        dispatch({
+          type: "declareGame",
+          payload: `Dealer Busts. Dealer Hand: ${dealerHandStatus}. Player Hand: ${playerHandStatus}`,
+        });
+      }
       return;
     }
     if (dealerDealt === true && dealerHandStatus > playerHandStatus) {
@@ -342,6 +364,7 @@ function BlackJack() {
         gameStatus={gameStatus}
         dealerTurn={dealerTurn}
       />
+      <button onClick={() => checkForAce(playerCards)}>Check for Ace</button>
     </div>
   );
 }

@@ -5,6 +5,10 @@
   gap: 1rem;
 }
 
+.nav li {
+  list-style: none;
+}
+
 .nav a {
   text-decoration: none;
   color: inherit;

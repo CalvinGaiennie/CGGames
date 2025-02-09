@@ -4,11 +4,15 @@ function DealerHand({ dealerCards }) {
       <h2>Dealer Hand</h2>
       <div className="flex">
         {dealerCards.map((card, index) => {
-          return (
-            <p className="card" key={index}>
-              {card}
-            </p>
-          );
+          if (index === 0) {
+            return <p className="card" key={index}></p>;
+          } else {
+            return (
+              <p className="card" key={index}>
+                {card}
+              </p>
+            );
+          }
         })}
       </div>
     </div>
