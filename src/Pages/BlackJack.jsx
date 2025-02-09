@@ -364,7 +364,6 @@ function BlackJack() {
         gameStatus={gameStatus}
         dealerTurn={dealerTurn}
       />
-      <button onClick={() => checkForAce(playerCards)}>Check for Ace</button>
     </div>
   );
 }
