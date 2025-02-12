@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: cggames-backend
+    env: node
+    buildCommand: npm install && cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: PORT
+        value: 10000

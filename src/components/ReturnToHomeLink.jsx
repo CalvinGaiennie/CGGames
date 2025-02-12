@@ -1,9 +1,17 @@
 import { NavLink } from "react-router-dom";
 import styles from "./AppNav.module.css";
+
 function ReturnToHomeLink() {
   return (
     <nav className={styles.nav}>
-      <NavLink to="/">home</NavLink>
+      <ul>
+        <li>
+          <NavLink to="/">home</NavLink>
+        </li>
+        <li>
+          <NavLink to="/login">login</NavLink>
+        </li>
+      </ul>
     </nav>
   );
 }
